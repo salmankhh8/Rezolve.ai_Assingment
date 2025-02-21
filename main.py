@@ -35,7 +35,7 @@ except OSError:
     nlp = spacy.load(model_name)
 
 HF_API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-HF_HEADERS = {"Authorization": "Bearer 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"}
+HF_HEADERS = {"Authorization": "Bearer hrXXXXXXXXXXXX"} #removing my original huging face access token due to Security reasons
 
 sessions = {}
 
