@@ -13,7 +13,6 @@ import uuid
 from fastapi.responses import JSONResponse
 
 
-# Initialize FastAPI app
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="AASDFGHJ@#$%^&*&^DFGH")
 
