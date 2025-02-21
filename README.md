@@ -1,57 +1,56 @@
-[# Rezolve.ai_Assingment](https://github.com/salmankhh8/Rezolve.ai_Assingment)
-
-# Text Processing API with .NET Backend
+# Text Processing API with FastAPI Backend
 
 ## 📌 Overview
-This project is a **text processing API** built using **ASP.NET Core** that integrates **LLM models** (Hugging Face & OpenAI) for:
+This project is a **text processing API** built using **FastAPI** that integrates **LLM models** (Hugging Face & OpenAI) for:
 - **Summarization**
 - **Keyword Extraction**
 - **Sentiment Analysis**
 
-A **Blazor frontend** is provided to interact with the API and retrieve session-based history.
+A **Streamlit frontend** is provided to interact with the API and retrieve session-based history.
 
 ---
 
 ## 🚀 Features
-✅ **RESTful API** using ASP.NET Core  
+✅ **RESTful API** using FastAPI  
 ✅ **Text Summarization** using Hugging Face LLM  
 ✅ **Named Entity Recognition (NER) for Keywords** using NLP libraries  
-✅ **Sentiment Analysis** using ML.NET  
+✅ **Sentiment Analysis** using TextBlob  
 ✅ **Session-based history retrieval**  
-✅ **Blazor UI for User Interaction**  
+✅ **Streamlit UI for User Interaction**  
 
 ---
 
 ## 📦 Installation
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/salmankhh8/Rezolve.ai_Assingment
-cd text-processing-api-dotnet
+git clone https://github.com/salmankhh8/Rezolve.ai_Assingment.git
+cd Rezolve.ai_Assingment
 ```
 
 ### **2️⃣ Install Dependencies**
+Install all dependencies from the `requirements.txt` file:
 ```sh
-dotnet restore
+pip install -r requirements.txt
 ```
 
 ### **3️⃣ Build and Run the Application**
 ```sh
-dotnet run
+uvicorn main:app --reload
 ```
-This will start the backend on `http://localhost:5000`
+This will start the backend on `http://127.0.0.1:8000`
 
 ---
 
 ## 🔥 Running the Application
-### **1️⃣ Start ASP.NET Core API**
+### **1️⃣ Start API**
 ```sh
-dotnet run --project TextProcessingApi
+uvicorn main:app --reload
 ```
-This will start the backend on `http://localhost:5000`
+This will start the backend on `http://127.0.0.1:8000`
 
-### **2️⃣ Start Blazor Frontend**
+### **2️⃣ Start Frontend**
 ```sh
-dotnet run --project TextProcessingUI
+streamlit run frontend_stremlit.py
 ```
 This will open the frontend in your browser.
 
@@ -59,7 +58,7 @@ This will open the frontend in your browser.
 
 ## 📡 API Endpoints
 ### **Process Text**
-- **Endpoint:** `POST /api/process`
+- **Endpoint:** `POST /process`
 - **Request:**
   ```json
   {
@@ -76,12 +75,12 @@ This will open the frontend in your browser.
   ```
 
 ### **Retrieve History**
-- **Endpoint:** `GET /api/history`
+- **Endpoint:** `GET /history`
 - **Response:** Returns all previously processed texts in the session.
 
 ---
 
-## 🎨 Blazor UI
+## 🎨 Streamlit UI
 The frontend allows users to:
 - **Enter text for processing**
 - **Retrieve session-based chat history**
@@ -90,8 +89,8 @@ The frontend allows users to:
 ---
 
 ## 🛠 Tech Stack
-- **Backend:** ASP.NET Core, ML.NET, Hugging Face API
-- **Frontend:** Blazor
+- **Backend:** FastAPI, Hugging Face API
+- **Frontend:** Streamlit
 - **Database:** In-memory (Session-based storage)
 
 ---
