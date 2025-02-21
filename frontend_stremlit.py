@@ -1,20 +1,15 @@
 import streamlit as st
 import requests
 
-# Streamlit UI
 st.title("📝 Text Processing App")
 
-# Text input area
 text = st.text_area("Enter text to process:")
 
-# Session state to store history
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# API Base URL
 BASE_URL = "http://127.0.0.1:8000"
 
-# Process Text
 if st.button("🔍 Process Text"):
     if text.strip():
         response = requests.post(f"{BASE_URL}/process", json={"text": text}, cookies={"session_id": st.session_state.get("session_id", "")})
@@ -36,7 +31,6 @@ if st.button("🔍 Process Text"):
     else:
         st.warning("⚠️ Please enter some text before processing.")
 
-# Retrieve Chat History
 if st.button("📜 Get History"):
     if "session_id" in st.session_state:
         history_response = requests.get(f"{BASE_URL}/history", cookies={"session_id": st.session_state["session_id"]})
